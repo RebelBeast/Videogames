@@ -19,7 +19,7 @@ body {
 }
 
 .no-bullet {
-    list-style-type: none;
+    list-style: none;
 }
 
 .navbar, .nav-list {
@@ -30,8 +30,8 @@ body {
 
 .nav-list h2 {
     text-align: left;
-    padding-block-start: 25px;
-    padding-left: 50px;
+    padding-block-start: 30px;
+    padding-left: 70px;
 }
 
 .container {
