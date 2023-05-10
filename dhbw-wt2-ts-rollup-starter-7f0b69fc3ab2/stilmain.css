@@ -4,7 +4,7 @@ body {
     line-height: 1.4;
     color: #000000;
     background-color: #ffffff;
-    margin: 0;
+    box-sizing: border-box;
 }
 nav {
 
@@ -29,4 +29,13 @@ nav a:hover{
 nav a.aktuell {
     color: #0078b4;
     font-weight: bold;
+}
+.container {
+    display: flex;
+    justify-content: flex-start;
+}
+.sidebar {
+    width: calc(15% - 10px);
+    border-radius: 10px;
+    margin-right: 10px;
 }
