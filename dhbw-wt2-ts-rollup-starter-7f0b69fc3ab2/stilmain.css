@@ -20,6 +20,10 @@ body {
     padding: 10px;
 }
 
+.no-bullet {
+    list-style-type: none;
+}
+
 .navbar, .nav-list {
     height: 10vh;
     width: 100%;
@@ -49,42 +53,42 @@ body {
     margin-right: 10px;
 }
 
-/*.w60 {
+.w60 {
     width: 60%;
 }
 
-.w100 {
+.backgr {
     width: 100%;
-}*/
+}
 
 .ps20 {
     padding: 0 20px;
 }
 
-/*.ps30 {
+.ps30 {
     padding: 0 30px;
 }
 
 .p20 {
     padding: 20px;
-}*/
+}
 
 .sticktop {
     position: absolute;
     margin: 0;
-    width: calc(25% - 5px);
+    width: calc(25% - 10px);
 }
 
-.sidebar, .editgames, .w60, .w100 {
-    height: 90vh;
+.sidebar, .editgames, .w60, .backgr {
+    height: 82vh;
     border-radius: 10px;
-    background-color: gray;
+    background-color: #3A3A3A;
 }
 
 .controls {
     height: 8vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     border-radius: 10px;
     box-shadow: 3px 2px 2px black;
@@ -92,13 +96,13 @@ body {
     background-color: #111;
 }
 
-/*.contact-contain {
+.contact-contain {
     position: relative;
 }
 
 .contactlist:nth-child(2) {
     margin-top: 8vh;
-}*/
+}
 
 .gamelist {
     overflow-y: scroll;
@@ -120,7 +124,7 @@ body {
     user-select: none; /* Standard */
 }
 
-/*.contact-item:before {
+.contact-item:before {
     content: "";
     width: 10px;
     height: 10vh;
@@ -134,10 +138,9 @@ body {
     background-color: #222;
     width: 15px;
     transition: 250ms all ease;
-}*/
+}
 
 .mylist {
-    border-right: 1px solid #666666;
     justify-content: center;
 }
 
@@ -150,14 +153,14 @@ body {
     flex-direction: column;
 }
 
-/*.element-bookshelf {
+.element-bookshelf {
     background-color: #2F2F2F;
     border: none;
     width: 100%;
     min-height: 5vh;
 }*/
 
-/*.placeholder {
+.placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,7 +169,7 @@ body {
 
 .placeholder p {
     font-size: 1.5rem;
-}*/
+}
 
 /* Colors */
 /* BGs */
@@ -264,17 +267,39 @@ a {
 }
 
 /* Buttons */
+.btn-navigation {
+    height: 6.5vh;
+    width: 70%;
+    background-color: #222222;
+    border: none;
+    border-radius: 5px;
+    margin-top: 2px;
+    margin-left: 15%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.btn-navigation:disabled {
+    background-color: #3F3F3F;
+    color: grey;
+}
+
+.btn-navigation:hover {
+    background-color: #2F2F2F;
+    transition: all 250ms ease;
+}
 
 .btn-control {
     height: 4vh;
     width: 32%;
+    margin-right: 10px;
     background-color: #222222;
     border: none;
     border-radius: 5px;
     transition: all 250ms ease;
 }
 
-.btn-control:disabled, .btn-bookdelete:disabled {
+.btn-control:disabled, .btn-delete-entry:disabled {
     background-color: #3F3F3F;
     color: grey;
 }
@@ -283,7 +308,7 @@ a {
     border-radius: 5px;
 }
 
-.btn-control:hover, .btn-bookcreate:hover, .btn-bookdelete:hover {
+.btn-control:hover, .btn-create-entry:hover, .btn-delete-entry:hover {
     background-color: #2F2F2F;
     transition: all 250ms ease;
 }

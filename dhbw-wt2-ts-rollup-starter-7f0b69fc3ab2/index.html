@@ -20,19 +20,87 @@
     <main class="container">
         <section class="sidebar">
             <aside class="controls mylist">
-                <h1>Meine Bibliothek</h1>
+                <h1>My Library</h1>
+            </aside>
+            <aside class="main-navigation">
+                <ul>
+                    <li><button class="btn-navigation btn-steam">Steam</button></li>
+                    <li><button class="btn-navigation btn-epic" disabled>Epic Games</button></li>
+                    <li><button class="btn-navigation btn-ubi" disabled>Ubisoft</button></li>
+                    <li><button class="btn-navigation btn-battle"disabled>Battle.net</button></li>
+                    <li><button class="btn-navigation btn-gog"disabled>GOG</button></li>
+                    <li><button class="btn-navigation btn-ea"disabled>EA</button></li>
+                    <li><button class="btn-navigation btn-xbox"disabled>Xbox-App</button></li>
+                    <li><button class="btn-navigation btn-else"disabled>Sonstige</button></li>
+                    <li><button class="btn-navigation btn-wishlist"disabled>Wunschliste</button></li>
+                </ul>
             </aside>
         </section>
         <section class="gamelist editgames">
             <aside class="controls editgames ps20 sticktop">
                 <button class="btn-control btn-create-entry">Create</button>
-                <button class="btn-control btn-edit-entry" disabled>Edit</button>
                 <button class="btn-control btn-delete-entry" disabled>Delete</button>
             </aside>
             <div class="contact-contain">
                 <aside class="contact-item ps30 invisible">
                 </aside>
             </div>
+        </section>
+        <section class="editarea w60">
+            <aside class="placeholder backgr ps20">
+                <p>Looking pretty empty. Why dont add some games ?</p>
+            </aside>
+            <aside class="contact-editor backgr p20 invisible">
+                <aside class="contact-controls w25 ps20 sticktop-viewer">
+                    <p class="action-create-headline">Create Contact</p>
+                    <p class="action-edit-headline invisible">Edit Contact</p>
+                </aside>
+                <div class="ce-inputs backgr">
+                    <div class="inputgroup">
+                        <label for="fname">First name:</label>
+                        <input type="text" id="fname" name="fname" class="form-input" maxlength="50">
+                    </div>
+                    <div class="inputgroup">
+                        <label for="lname">Last name:</label>
+                        <input type="text" id="lname" name="lname" class="form-input" maxlength="50">
+                    </div>
+                    <div class="inputgroup">
+                        <label for="email">E-Mail:</label>
+                        <input pattern="[^@\s]+@[^@\s]+\.[^@\s]+" type="text" id="email" name="email" class="form-input"
+                               maxlength="50">
+                        <!-- Quelle: https://stackoverflow.com/questions/5601647/html5-email-input-pattern-attribute -->
+                    </div>
+                    <div class="inputgroup">
+                        <label for="phone">Phone:</label>
+                        <input type="text" id="phone" pattern="(\+?\d{1,3}\s?)?\(?\d{2,5}\)?[-.\s]?\d{3,6}[-.\s]?\d{3,6}"
+                               name="phone" class="form-input" maxlength="50">
+                        <!-- Quelle: https://stackoverflow.com/questions/8634139/phone-validation-regex -->
+                    </div>
+                </div>
+                <div class="buttongroup-editor pl20">
+                    <button class="btn-cancel btn-control">Cancel</button>
+                    <button class="btn-save btn-control" disabled>Save</button>
+                    <button class="btn-edit-save btn-control" disabled>Save</button>
+                </div>
+            </aside>
+            <aside class="backgr p20 invisible contact-viewer">
+                <aside class="contact-controls w25 ps20 sticktop-viewer sticktop-with-controls">
+                    <h2>View contact: <span class="view-headline"></span></h2>
+                </aside>
+                <div class="viewer-shortcuts">
+                    <button class="viewer-shortcut-btn viewer-shortcut-call" disabled>Call</button>
+                    <button class="viewer-shortcut-btn viewer-shortcut-email" disabled>E-Mail</button>
+                </div>
+                <aside class="contact-viewer-content">
+                    <p>First name: <span class="view-label view-firstname">Error</span></p>
+                    <p>Last name: <span class="view-label view-lastname">Error</span></p>
+                    <p>E-Mail: <span class="view-label view-email">Error</span></p>
+                    <p>Phone: <span class="view-label view-firstname">Error</span></p>
+                    <div class="buttongroup-editor pl20 buttongroup-close-view">
+                        <button class="btn-control btn-close-viewer">Close</button>
+                    </div>
+                </aside>
+            </aside>
         </section>
     </main>
 </body>
