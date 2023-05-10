@@ -1,41 +1,306 @@
-body {
-    font-size: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.4;
-    color: #000000;
-    background-color: #ffffff;
+* {
     box-sizing: border-box;
-}
-nav {
-
-    background-color: #2a2a2cec;
-}
-nav ul {
     margin: 0;
-    display: flex;
-    list-style: none;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
-nav a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 0.8rem;
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent; /* make scrollbar transparent */
 }
-nav a:hover{
-    font-weight: normal;
-    padding: 0.8rem;
-    color: rgb(122,122,122);
+/* Quelle: https://stackoverflow.com/questions/43186015/css-hide-scroll-bar-but-have-element-scrollable */
+
+/* Generelles Layout */
+
+header {
+    background-color: #111;
 }
-nav a.aktuell {
-    color: #0078b4;
-    font-weight: bold;
+body {
+    background-color: #111;
+    padding: 10px;
 }
+
+.navbar, .nav-list {
+    height: 10vh;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.nav-list h2 {
+    text-align: left;
+    padding-block-start: 25px;
+    padding-left: 50px;
+}
+
 .container {
     display: flex;
     justify-content: flex-start;
+    background-color: black;
+    margin-top: 10px;
 }
+
 .sidebar {
-    width: calc(15% - 10px);
-    border-radius: 10px;
+    width: 15%;
     margin-right: 10px;
+}
+
+.editgames {
+    width: 25%;
+    margin-right: 10px;
+}
+
+/*.w60 {
+    width: 60%;
+}
+
+.w100 {
+    width: 100%;
+}*/
+
+.ps20 {
+    padding: 0 20px;
+}
+
+/*.ps30 {
+    padding: 0 30px;
+}
+
+.p20 {
+    padding: 20px;
+}*/
+
+.sticktop {
+    position: absolute;
+    margin: 0;
+    width: calc(25% - 5px);
+}
+
+.sidebar, .editgames, .w60, .w100 {
+    height: 90vh;
+    border-radius: 10px;
+    background-color: gray;
+}
+
+.controls {
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 3px 2px 2px black;
+    margin-bottom: 10px;
+    background-color: #111;
+}
+
+/*.contact-contain {
+    position: relative;
+}
+
+.contactlist:nth-child(2) {
+    margin-top: 8vh;
+}*/
+
+.gamelist {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 82vh;
+}
+
+.contact-item {
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #3A3A3A;
+    border-top: 1px solid #666; 
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+/*.contact-item:before {
+    content: "";
+    width: 10px;
+    height: 10vh;
+    background-color: #2F2F2F;
+    position: absolute;
+    left: 0;
+    transition: all 250ms ease;
+}
+
+.contact-item:hover:before {
+    background-color: #222;
+    width: 15px;
+    transition: 250ms all ease;
+}*/
+
+.mylist {
+    border-right: 1px solid #666666;
+    justify-content: center;
+}
+
+.mylist h1 {
+    font-weight: 400;
+}
+
+.books {
+    display: flex;
+    flex-direction: column;
+}
+
+/*.element-bookshelf {
+    background-color: #2F2F2F;
+    border: none;
+    width: 100%;
+    min-height: 5vh;
+}*/
+
+/*.placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.placeholder p {
+    font-size: 1.5rem;
+}*/
+
+/* Colors */
+/* BGs */
+.sidebar {
+    background-color: #333333;
+}
+
+.gamelist {
+    background-color: #333333;
+}
+
+.editarea {
+    background-color: #555555;
+}
+
+.navbar {
+    background-color: #222222;
+}
+
+.controls {
+    background-color: #3D3D3D;
+}
+
+.ce-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 40vh;
+}
+
+.inputgroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.inputgroup input {
+    width: 100%;
+    border: none;
+    background-color: #444444;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    padding-left: 10px;
+}
+
+.inputgroup label {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.action-create-headline, .action-edit-headline {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.buttongroup-editor {
+    display: flex;
+    position: absolute;
+    width: 25%;
+    justify-content: flex-end;
+    align-items: center;
+    right: 0;
+    bottom: 0;
+    gap: 20px;
+    height: 8vh;
+    margin-right: 20px;
+}
+
+/* text-elements */
+p, a, h1, h2, h3, h4, h5, button, label {
+    color: white;
+}
+
+button, p, a {
+    font-size: 1rem;
+}
+
+.heading {
+    font-size: 1.5rem;
+}
+
+/* Dividers */
+
+hr {
+    border-top: 1px solid white;
+}
+
+/* Link-Formatting */
+a {
+    text-decoration: none;
+}
+
+/* Buttons */
+
+.btn-control {
+    height: 4vh;
+    width: 32%;
+    background-color: #222222;
+    border: none;
+    border-radius: 5px;
+    transition: all 250ms ease;
+}
+
+.btn-control:disabled, .btn-bookdelete:disabled {
+    background-color: #3F3F3F;
+    color: grey;
+}
+
+.btn-cancel, .btn-save {
+    border-radius: 5px;
+}
+
+.btn-control:hover, .btn-bookcreate:hover, .btn-bookdelete:hover {
+    background-color: #2F2F2F;
+    transition: all 250ms ease;
+}
+
+.btn-pp-save, .btn-pp-cancel {
+    background-color: #111;
+}
+
+.btn-pp-save:hover, .btn-pp-cancel:hover {
+    background-color: #1F1F1F;
+}
+
+.btn-pp-save:hover:disabled {
+    background-color: #3F3F3F;
+}
+
+/* Util classes (used by ts) */
+.invisible {
+    display: none !important;
 }
